@@ -1,0 +1,371 @@
+<html>
+<head>
+<title>Keypad 2</title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage zero;
+PImage one;
+PImage two;
+PImage three;
+PImage four;
+PImage five;
+PImage six;
+PImage seven;
+PImage eight;
+PImage nine;
+
+int x;
+int rectH;
+int rectL;
+int rectG;
+int code;
+int power;
+int y;
+int PNumber;
+int a;
+int b;
+int c;
+int d;
+int Z;
+
+void setup()
+{
+
+	size( 1000,1000 );
+	frameRate( 30 );
+	
+	x=0;
+	y=1;
+	PNumber = 0;
+	
+	rectH =100;
+	rectL=100;
+	rectG=10;
+	
+	zero = loadImage ("pic/0.png");
+	one = loadImage ("pic/1.png");
+	two = loadImage ("pic/2.png");
+	three = loadImage ("pic/3.png");
+	four = loadImage ("pic/4.png");
+	five = loadImage ("pic/5.png");
+	six = loadImage ("pic/6.png");
+	seven = loadImage ("pic/7.png");
+	eight = loadImage ("pic/8.png");
+	nine = loadImage ("pic/9.png");
+	
+
+
+}
+
+
+void draw()
+{
+
+background(0,0,0);
+
+//password block
+	rect(30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG,30+rectH+rectG,rectL*3,rectH);
+
+//1
+	rect(30,30,rectL,rectH);
+	image(one,30,30,rectL,rectH);
+	
+//4
+	rect(30,30+rectH+rectG,rectL,rectH);
+	image(four,30,30+rectH+rectG,rectL,rectH);
+
+//7
+	rect(30,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	image (seven,30,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	
+//2
+	rect(30+rectL+rectG,30,rectL,rectH);
+	image(two,30+rectL+rectG,30,rectL,rectH);
+
+//5
+	rect(30+rectL+rectG,30+rectH+rectG,rectL,rectH);
+	image(five,30+rectL+rectG,30+rectH+rectG,rectL,rectH);
+
+//8
+	rect(30+rectL+rectG,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	image(eight,30+rectL+rectG,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	
+//3
+	rect(30+rectL+rectG+rectL+rectG,30,rectL,rectH);
+	image(three,30+rectL+rectG+rectL+rectG,30,rectL,rectH);
+	
+//6
+	rect(30+rectL+rectG+rectL+rectG,30+rectH+rectG,rectL,rectH);
+	image(six,30+rectL+rectG+rectL+rectG,30+rectH+rectG,rectL,rectH);
+	
+//9
+	rect(30+rectL+rectG+rectL+rectG,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	image(nine,30+rectL+rectG+rectL+rectG,30+rectH+rectG+rectH+rectG,rectL,rectH);
+	
+//0
+	rect(30+rectL+rectG,30+rectH+rectG+rectH+rectG+rectH+rectG,rectL,rectH);
+	image(zero,30+rectL+rectG,30+rectH+rectG+rectH+rectG+rectH+rectG,rectL,rectH);
+	
+//showing 
+
+
+
+	// overall
+	if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX>30+rectL+rectG && mouseX < 30+rectL*3+rectG*3 &&
+				 mouseY>30 && mouseY < 30+rectL*3+rectG*3)
+			
+				{
+					PNumber=PNumber+1;
+					y=0;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}	
+	if ( PNumber>=1 )
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG,30+rectH+rectG);
+	}
+	
+	if ( PNumber>=2 )
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL,30+rectH+rectG);
+	}
+	
+	if ( PNumber>=3 )
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectL,30+rectH+rectG);
+	}
+	
+	if ( PNumber>=4 )
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectL+rectL,30+rectH+rectG);
+	}
+	
+
+text(x,100,500);
+
+	//1
+if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30 && mouseY <30+rectH && x == 0)
+			
+				{
+					x=x+1;
+					y=0;
+					a=1;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	
+if ( x>=1 )
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG,30+rectH+rectG);
+	}
+	
+	
+	
+	//1 showing 
+	
+if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30 && mouseY <30+rectH)
+			
+				{
+					x=x+1;
+					y=0;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	
+	
+	//4
+if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30+rectH+rectG && mouseY <30+rectH+rectG+rectH && x==1)
+			
+				{
+					x=x+1;
+					y=0;
+					b=1;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+
+if (x>=2)
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG,30+rectH+rectG);
+	}	
+	
+	//4 showing
+	
+	if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30+rectH+rectG && mouseY <30+rectH+rectG+rectH)
+			
+				{
+					x=x+1;
+					y=0;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	
+	//7
+if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30+rectH+rectG+rectH+rectG && mouseY <30+rectH+rectG+rectH+rectH+rectG && x==2)
+			
+				{
+					x=x+1;
+					y=0;
+					c=1;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	
+if (x>=3)
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectL,30+rectH+rectG);
+	}
+	
+//7 showing
+	
+	if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30 && mouseX < 30+rectL &&
+				mouseY > 30+rectH+rectG+rectH+rectG && mouseY <30+rectH+rectG+rectH+rectH+rectG && x==2)
+			
+				{
+					x=x+1;
+					y=0;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	//0
+if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30+rectL+rectG && mouseX < 30+rectL+rectG+rectL &&
+				mouseY > 30+rectH+rectG+rectH+rectG+rectH+rectG && mouseY <30+rectH+rectG+rectH+rectG+rectH+rectG+rectH && x==3)
+			
+				{
+					x=x+1;
+					y=0;
+					d=1;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+	
+if (x>=4)
+	{
+		text("*", 30+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectG+rectL+rectL+rectL,30+rectH+rectG);
+	}
+	
+	//0 showing
+	
+	if (mousePressed == true)
+	{
+		if (mouseButton ==LEFT && y == 1)
+		{
+			if (mouseX > 30+rectL+rectG && mouseX < 30+rectL+rectG+rectL &&
+				mouseY > 30+rectH+rectG+rectH+rectG+rectH+rectG && mouseY <30+rectH+rectG+rectH+rectG+rectH+rectG+rectH)
+			
+				{
+					x=x+1;
+					y=0;
+				}
+		}
+	}
+			
+	if (mousePressed == false)
+	{
+		y=1;
+	}
+//Link
+
+if (a==1)
+	{
+		if (b==1)
+			{
+				if (c==1)
+					{
+						if (d==1)
+						{
+							link("welcome.html");
+						}
+					}
+			}
+	}
+			
+	
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
