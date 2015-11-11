@@ -19,8 +19,26 @@ void setup()
 
 void draw()
 {
-background(0,0,0);
-text ("Welcome",100,100);
+	background(225,225,225);
+	
+	fill(0,0,0);
+	textSize(50);
+	text("Welcome",125,125);
+	
+	fill(255,255,255);
+	rect(282,150,150,50);
+	
+	fill(0,0,0);
+	textSize(20);
+	text("Go Back",315,182);
+	
+	if(mousePressed == true && mouseButton == LEFT)
+	{
+		if(mouseX > 282 && mouseX < 432 && mouseY > 150 && mouseY < 200)
+		{
+			link("index.html")
+		}
+	}
 
 
 }
